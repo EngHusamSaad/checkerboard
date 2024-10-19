@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    {% for i in range(0,x,1)%}  {# Rows #}
+    <div class="verticalbox">
+        {% for j in range(0,y,1)%}   {# Colmuns #}
+            {% if i%2==0 %}
+                {% if j%2!=0 %}
+                
+                <div class="box" style="background-color: {{color1}} ;" ></div>
+                {% else %}
+                <div class="box" style="background-color: {{color2}};" ></div>
+                {% endif %}
+            {% else %}
+
+            {% if j%2==0 %}
+                <div class="box" style="background-color:{{color1}} ;" ></div>
+                {% else %}
+                <div class="box" style="background-color: {{color2}};" ></div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% endfor %}
+
+    <style>
+        body {
+            margin: 0px auto;
+        }
+
+        .verticalbox {
+            display: flex;
+        }
+
+        .box {
+            width: 20px;
+            height: 20px;
+           
+        }
+    </style>
+
+
+</body>
+
+</html>
